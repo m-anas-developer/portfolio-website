@@ -1,0 +1,10 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Tell Google where the sitemap is
+Sitemap: https://m-anas-dev.netlify.app/sitemap.xml
+
+# Block crawling of unnecessary files (optional)
+Disallow: /assets/
+Disallow: /*.pdf$

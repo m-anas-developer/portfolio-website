@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Muhammad Anas – Full Stack Developer Portfolio. Showcasing skills in HTML, CSS, JavaScript, PHP, MySQL and more.">
+    <meta name="keywords"
+        content="Muhammad Anas, Full Stack Developer, Portfolio, Web Developer, PHP Developer, Karachi, Pakistan">
+    <meta name="author" content="Muhammad Anas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Muhammad Anas – Full Stack Developer Portfolio">
+    <meta property="og:description"
+        content="Professional portfolio showcasing skills, education, and contact information of Muhammad Anas, a Full Stack Developer from Karachi, Pakistan.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f97316">
+    <title>Muhammad Anas – Full Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        'primary-dark': '#ea580c',
+                        'primary-light': '#fb923c',
+                        'primary-50': '#fff7ed',
+                        'primary-100': '#ffedd5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .reveal {
+            visibility: hidden;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: #f97316;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            border-radius: 2px;
+            animation: blink 0.9s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .ripple-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple-span {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-anim 0.7s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-anim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(249, 115, 22, 0.15);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #f97316, #fb923c, #f97316);
+            border-radius: 4px;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .nav-link.active {
+            color: #f97316 !important;
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: #f97316;
+            border-radius: 4px;
+        }
+
+        ::selection {
+            background: #f97316;
+            color: #fff;
+        }
+
+        *:focus-visible {
+            outline: 2px solid #f97316;
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        #scrollToTop {
+            opacity: 0;
+            visibility: hidden;
+            transition: none;
+        }
+
+        #scrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased">
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 glass-nav h-16 md:h-20 flex items-center">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full"
+            aria-label="Main navigation">
+            <a href="#hero"
+                class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                <span
+                    class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md shadow-primary/30"><img
+                        width="27px" src="assets/img/my.png" alt="">
+                </span>
+                <span class="hidden sm:inline">Muhammad
+                    <span class="text-primary">Anas</span>
+                </span>
+            </a>
+            <ul class="hidden md:flex items-center gap-1 lg:gap-2" role="list">
+                <li><a href="#hero"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Home</a>
+                </li>
+                <li><a href="#about"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">About</a>
+                </li>
+                <li><a href="#education"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Education</a>
+                </li>
+                <li><a href="#skills"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Skills</a>
+                </li>
+                <li><a href="#projects"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Projects</a>
+                </li>
+                <li><a href="#languages"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Languages</a>
+                </li>
+                <li><a href="#contact"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Contact</a>
+                </li>
+                <li><a href="#reference"
+                        class="nav-link relative px-3 py-2 text-sm lg:text-base text-gray-700 hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary-50">Reference</a>
+                </li>
+            </ul>
+            <a href="#contact"
+                class="hidden md:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-all duration-300 shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 ripple-btn">
+                <i class="bi bi-chat-dots-fill"></i> Let's Talk
+            </a>
+            <button id="hamburger-btn"
+                class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-primary-50 transition-colors duration-300 z-50 relative"
+                aria-label="Toggle mobile menu" aria-expanded="false">
+                <span id="bar1"
+                    class="block w-6 h-0.5 bg-gray-700 rounded-full transition-transform duration-300"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-gray-700 rounded-full transition-opacity duration-300"></span>
+                <span id="bar3"
+                    class="block w-5 h-0.5 bg-gray-700 rounded-full transition-transform duration-300 ml-auto"></span>
+            </button>
+        </nav>
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-2xl md:hidden"
+            role="menu">
+            <ul class="flex flex-col px-6 py-5 gap-1 max-w-lg mx-auto" role="list">
+                <li><a href="#hero"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-house-door-fill mr-2"></i>Home</a></li>
+                <li><a href="#about"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-person-fill mr-2"></i>About</a></li>
+                <li><a href="#education"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-mortarboard-fill mr-2"></i>Education</a></li>
+                <li><a href="#skills"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-lightbulb-fill mr-2"></i>Skills</a></li>
+                <li><a href="#projects"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-folder-fill mr-2"></i>Projects</a></li>
+                <li><a href="#languages"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-translate mr-2"></i>Languages</a></li>
+                <li><a href="#contact"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-telephone-fill mr-2"></i>Contact</a></li>
+                <li><a href="#reference"
+                        class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary-50 rounded-xl font-medium text-lg"><i
+                            class="bi bi-building-check mr-2"></i>Reference</a></li>
+                <li><a href="#contact"
+                        class="block text-center bg-primary text-white px-5 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all duration-300 shadow-md shadow-primary/25 mt-2 ripple-btn">Let's
+                        Talk</a></li>
+            </ul>
+        </div>
+    </header>
+    <section id="hero"
+        class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-white via-primary-50 to-white">
+        <div class="absolute top-10 right-5 md:right-20 w-72 h-72 md:w-96 md:h-96 bg-primary/10 rounded-full blur-3xl blob-shape pointer-events-none"
+            aria-hidden="true"></div>
+        <div class="absolute bottom-10 left-5 md:left-20 w-56 h-56 md:w-80 md:h-80 bg-primary/8 rounded-full blur-3xl blob-shape pointer-events-none"
+            aria-hidden="true"></div>
+        <div class="absolute top-1/3 left-1/2 w-40 h-40 bg-primary/6 rounded-full blur-3xl pointer-events-none"
+            aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <div class="hero-avatar mb-8 opacity-0">
+                <div
+                    class="w-28 h-28 sm:w-36 sm:h-36 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light p-1 shadow-2xl shadow-primary/30">
+                    <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/my.png" alt="profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <h1
+                    class="hero-name text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-4 tracking-tight opacity-0">
+                    Muhammad <span class="text-primary">Anas</span>
+                </h1>
+                <div
+                    class="hero-title text-xl sm:text-2xl md:text-3xl font-semibold text-gray-600 mb-6 h-10 flex items-center justify-center opacity-0">
+                    <span id="typing-text" class="text-primary"></span><span class="typing-cursor"></span>
+                </div>
+                <p
+                    class="hero-intro text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0">
+                    A passionate Full Stack Developer crafting efficient, scalable, and user-friendly web applications.
+                    I
+                    transform ideas into digital reality with clean code and modern technologies.
+                </p>
+                <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0">
+                    <a href="#contact"
+                        class="ripple-btn inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition-all duration-300 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transform">
+                        <i class="bi bi-envelope-fill text-xl"></i> Contact Me
+                    </a>
+                    <a href="my-cv.pdf?v=2" download="my-cv.pdf"
+                        class="ripple-btn inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full text-lg font-semibold border-2 border-primary hover:bg-primary-50 transition-all duration-300 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transform">
+                        <i class="bi bi-download text-xl"></i>
+                        Download CV
+                    </a>
+                </div>
+                <div class="hero-stats flex flex-wrap justify-center gap-6 sm:gap-10 mt-14 opacity-0">
+                    <div class="text-center px-4"><span
+                            class="block text-3xl sm:text-4xl font-extrabold text-primary">2+</span><span
+                            class="text-sm sm:text-base text-gray-500 font-medium">Years Coding</span></div>
+                    <div class="text-center px-4 border-l border-gray-200 pl-6 sm:pl-10"><span
+                            class="block text-3xl sm:text-4xl font-extrabold text-primary">6+</span><span
+                            class="text-sm sm:text-base text-gray-500 font-medium">Technologies</span></div>
+                    <div class="text-center px-4 border-l border-gray-200 pl-6 sm:pl-10"><span
+                            class="block text-3xl sm:text-4xl font-extrabold text-primary">3</span><span
+                            class="text-sm sm:text-base text-gray-500 font-medium">Qualifications</span></div>
+                </div>
+            </div>
+    </section>
+    <section id="about" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="section-heading text-center mb-14 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">About
+                    Me</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">My <span
+                        class="text-primary">Objective</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="about-card max-w-3xl mx-auto opacity-0">
+                <div
+                    class="glass rounded-3xl p-8 sm:p-10 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 border border-primary/10 relative overflow-hidden group">
+                    <div
+                        class="absolute top-4 right-6 text-7xl text-primary/10 group-hover:text-primary/20 transition-colors duration-500">
+                        <i class="bi bi-quote"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-start gap-4 mb-5">
+                            <div
+                                class="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary/20">
+                                <i class="bi bi-bullseye text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 pt-2">Career Objective</h3>
+                        </div>
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
+                            To be a part of a progressive organization as a <strong class="text-primary">Full Stack
+                                Developer</strong> where I can utilize my skills in <span
+                                class="font-semibold text-gray-800">front-end and back-end development</span> to build
+                            efficient, scalable, and user-friendly web applications while continuously learning and
+                            growing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50/80">
+        <div class="max-w-5xl mx-auto">
+            <div class="section-heading text-center mb-16 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">My
+                    Journey</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Education <span
+                        class="text-primary">Timeline</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="relative">
+                <div class="timeline-line hidden md:block"></div>
+                <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-primary/30 rounded-full md:hidden"></div>
+                <div class="space-y-10 md:space-y-16">
+                    <div class="timeline-item opacity-0 relative flex flex-col md:flex-row items-start gap-6 md:gap-0">
+                        <div
+                            class="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 top-2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg shadow-primary/30 z-10">
+                        </div>
+                        <div class="md:w-1/2 md:pr-14 pl-10 md:pl-0 md:text-right">
+                            <div
+                                class="glass rounded-2xl p-6 sm:p-7 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-primary/5 inline-block text-left md:text-right w-full">
+                                <span
+                                    class="inline-flex items-center gap-2 text-xs font-bold text-primary bg-primary-100 px-3 py-1 rounded-full mb-3"><i
+                                        class="bi bi-calendar-check"></i> Completed</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900">Matric</h3>
+                                <p class="text-gray-600 mt-2 flex items-center gap-2 justify-start md:justify-end"><i
+                                        class="bi bi-building text-primary"></i> Federal Board of Intermediate and
+                                    Secondary Education</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+                    <div class="timeline-item opacity-0 relative flex flex-col md:flex-row items-start gap-6 md:gap-0">
+                        <div
+                            class="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 top-2 w-4 h-4 bg-primary-light rounded-full border-4 border-white shadow-lg shadow-primary/20 z-10">
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="md:w-1/2 md:pl-14 pl-10">
+                            <div
+                                class="glass rounded-2xl p-6 sm:p-7 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-primary/5 w-full">
+                                <span
+                                    class="inline-flex items-center gap-2 text-xs font-bold text-amber-600 bg-amber-100 px-3 py-1 rounded-full mb-3"><i
+                                        class="bi bi-hourglass-split"></i> In Progress</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900">Intermediate</h3>
+                                <p class="text-gray-600 mt-2 flex items-center gap-2"><i
+                                        class="bi bi-building text-primary"></i> Board of Intermediate Education Karachi
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item opacity-0 relative flex flex-col md:flex-row items-start gap-6 md:gap-0">
+                        <div
+                            class="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 top-2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg shadow-primary/30 z-10">
+                        </div>
+                        <div class="md:w-1/2 md:pr-14 pl-10 md:pl-0 md:text-right">
+                            <div
+                                class="glass rounded-2xl p-6 sm:p-7 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-primary/5 inline-block text-left md:text-right w-full">
+                                <span
+                                    class="inline-flex items-center gap-2 text-xs font-bold text-green-600 bg-green-100 px-3 py-1 rounded-full mb-3"><i
+                                        class="bi bi-mortarboard-fill"></i> Diploma</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900">Diploma in Software Engineering
+                                </h3>
+                                <p class="text-gray-600 mt-2 flex items-center gap-2 justify-start md:justify-end"><i
+                                        class="bi bi-building text-primary"></i> Aptech Computer Education</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="section-heading text-center mb-14 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">What
+                    I Know</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Technical <span
+                        class="text-primary">Skills</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-lg mx-auto">Technologies and tools I work with to build amazing
+                    digital experiences</p>
+
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+                <div
+                    class="skill-card opacity-0 group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-orange-50 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-400 shadow-md group-hover:shadow-primary/30">
+                        <i
+                            class="bi bi-filetype-html text-3xl sm:text-4xl text-primary group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h4
+                        class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-primary transition-colors duration-300">
+                        HTML5</h4>
+                    <span class="text-xs text-gray-400 mt-1 block">Front-End</span>
+                </div>
+                <div
+                    class="skill-card opacity-0 group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-500 group-hover:scale-110 transition-all duration-400 shadow-md group-hover:shadow-blue-500/30">
+                        <i
+                            class="bi bi-filetype-css text-3xl sm:text-4xl text-blue-500 group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h4
+                        class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-blue-500 transition-colors duration-300">
+                        CSS3</h4>
+                    <span class="text-xs text-gray-400 mt-1 block">Styling</span>
+                </div>
+                <div
+                    class="skill-card opacity-0 group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-yellow-50 flex items-center justify-center mb-4 group-hover:bg-yellow-500 group-hover:scale-110 transition-all duration-400 shadow-md group-hover:shadow-yellow-500/30">
+                        <i
+                            class="bi bi-filetype-js text-3xl sm:text-4xl text-yellow-500 group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h4
+                        class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-yellow-500 transition-colors duration-300">
+                        JavaScript</h4>
+                    <span class="text-xs text-gray-400 mt-1 block">Dynamic Logic</span>
+                </div>
+                <div
+                    class="skill-card opacity-0 group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-cyan-50 flex items-center justify-center mb-4 group-hover:bg-cyan-500 group-hover:scale-110 transition-all duration-400 shadow-md group-hover:shadow-cyan-500/30">
+                        <i
+                            class="bi bi-wind text-3xl sm:text-4xl text-cyan-500 group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h4
+                        class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-cyan-500 transition-colors duration-300">
+                        Tailwind CSS</h4>
+                    <span class="text-xs text-gray-400 mt-1 block">Utility-First</span>
+                </div>
+                <div
+                    class="skill-card opacity-0 group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-indigo-50 flex items-center justify-center mb-4 group-hover:bg-indigo-500 group-hover:scale-110 transition-all duration-400 shadow-md group-hover:shadow-indigo-500/30">
+                        <i
+                            class="bi bi-filetype-php text-3xl sm:text-4xl text-indigo-500 group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h4
+                        class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-indigo-500 transition-colors duration-300">
+                        PHP</h4>
+                    <span class="text-xs text-gray-400 mt-1 block">Back-End</span>
+                </div>
+                <div
+                    class="skill-card opacity-0 group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-teal-50 flex items-center justify-center mb-4 group-hover:bg-teal-500 group-hover:scale-110 transition-all duration-400 shadow-md group-hover:shadow-teal-500/30">
+                        <i
+                            class="bi bi-database text-3xl sm:text-4xl text-teal-500 group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h4
+                        class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-teal-500 transition-colors duration-300">
+                        MySQL</h4>
+                    <span class="text-xs text-gray-400 mt-1 block">Database</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50/80">
+        <div class="max-w-5xl mx-auto">
+            <div class="section-heading text-center mb-14 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">
+                    My Work
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    Featured <span class="text-primary">Project</span>
+                </h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-lg mx-auto">
+                    A glimpse into my development skills and capabilities
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="project-card opacity-0 group">
+                    <div
+                        class="glass rounded-3xl p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-primary/10 hover:-translate-y-2">
+                        <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-primary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-all duration-400 shadow-lg group-hover:shadow-primary/30">
+                                <i
+                                    class="bi bi-browser-chrome text-4xl text-primary group-hover:text-white transition-colors duration-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                                    Sports Info Website
+                                </h3>
+                                <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
+                                    A fully responsive and user-friendly web application built using
+                                    <strong class="text-primary">HTML, CSS and JavaScript</strong>.
+                                    Includes dynamic content management, form handling, database integration,
+                                    and seamless user experience across all devices.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-5">
+                                    <span
+                                        class="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full border border-orange-200">HTML5</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full border border-blue-200">CSS3</span>
+                                    <span
+                                        class="px-3 py-1 bg-yellow-50 text-yellow-600 text-xs font-semibold rounded-full border border-yellow-200">JavaScript</span>
+                                </div>
+
+                                <a href="https://websportsinfo.netlify.app" target="_blank" rel="noopener noreferrer"
+                                    class="ripple-btn inline-flex items-center gap-3 bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-dark transition-all duration-300 shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5 transform">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="languages" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="section-heading text-center mb-14 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">Communication</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Languages I <span
+                        class="text-primary">Speak</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-2xl mx-auto">
+                <div
+                    class="lang-card opacity-0 group bg-white rounded-3xl p-7 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border border-primary/10 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto rounded-full bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-400 shadow-lg group-hover:shadow-primary/30">
+                        <i
+                            class="bi bi-translate text-3xl text-primary group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Urdu</h3>
+                    <span
+                        class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full">Native</span>
+                    <p class="text-gray-500 text-sm mt-3">Mother tongue – fluent in reading, writing, and speaking</p>
+                </div>
+                <div
+                    class="lang-card opacity-0 group bg-white rounded-3xl p-7 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border border-primary/10 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto rounded-full bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-400 shadow-lg group-hover:shadow-primary/30">
+                        <i
+                            class="bi bi-globe2 text-3xl text-primary group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">English</h3>
+                    <span
+                        class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full">Intermediate</span>
+                    <p class="text-gray-500 text-sm mt-3">Professional working proficiency – actively improving</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="section-heading text-center mb-14 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">Get
+                    In Touch</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Contact <span
+                        class="text-primary">Me</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-lg mx-auto">Feel free to reach out — I'd love to connect and discuss
+                    opportunities</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
+                <div
+                    class="contact-card opacity-0 group bg-white rounded-3xl p-7 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border border-primary/10">
+                    <div class="flex items-start gap-5">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-colors duration-400 shadow-md group-hover:shadow-green-500/30">
+                            <i
+                                class="bi bi-whatsapp text-2xl text-green-500 group-hover:text-white transition-colors duration-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-1">Phone / WhatsApp</h3>
+                            <a href="tel:+923043964853"
+                                class="text-primary hover:text-primary-dark font-semibold text-lg transition-colors duration-300 inline-flex items-center gap-2">+92
+                                304 3964853 <i class="bi bi-arrow-up-right text-sm"></i></a>
+                            <a href="https://wa.me/923043964853" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 mt-3 text-sm text-green-600 bg-green-50 hover:bg-green-100 px-4 py-2 rounded-full font-medium transition-all duration-300"><i
+                                    class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="contact-card opacity-0 group bg-white rounded-3xl p-7 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border border-primary/10">
+                    <div class="flex items-start gap-5">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center flex-shrink-0 group-hover:bg-red-500 transition-colors duration-400 shadow-md group-hover:shadow-red-500/30">
+                            <i
+                                class="bi bi-geo-alt-fill text-2xl text-red-500 group-hover:text-white transition-colors duration-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-1">Location</h3>
+                            <p class="text-gray-700 font-semibold text-lg">Karachi, Pakistan</p>
+                            <span class="inline-flex items-center gap-1 text-sm text-gray-500 mt-2"><i
+                                    class="bi bi-pin-map-fill text-primary"></i> Available for opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reference" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50/80">
+        <div class="max-w-4xl mx-auto">
+            <div class="section-heading text-center mb-14 opacity-0">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary text-sm font-semibold rounded-full mb-4 tracking-wide uppercase">Endorsement</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Professional <span
+                        class="text-primary">Reference</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="ref-card max-w-lg mx-auto opacity-0">
+                <div
+                    class="glass rounded-3xl p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-primary/10 text-center group hover:-translate-y-1">
+                    <div
+                        class="w-16 h-16 mx-auto rounded-full bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-400 shadow-lg group-hover:shadow-primary/30">
+                        <i
+                            class="bi bi-building-check text-3xl text-primary group-hover:text-white transition-colors duration-400"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Aptech Placement Group</h3>
+                    <div class="flex items-center justify-center gap-2 text-gray-600 mb-2"><i
+                            class="bi bi-geo-alt text-primary"></i><span>Aptech, Metro Star Gate</span></div>
+                    <p class="text-gray-500 text-sm mt-4">A trusted placement group affiliated with Aptech Computer
+                        Education, providing career opportunities for skilled graduates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <!-- Footer Top Section -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-primary/40">MA</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Muhammad Anas</h3>
+                        <p class="text-gray-400 text-sm">Full Stack Developer</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <a href="#hero"
+                        class="text-gray-400 hover:text-primary transition-colors duration-300 px-2">Home</a>
+                    <a href="#about"
+                        class="text-gray-400 hover:text-primary transition-colors duration-300 px-2">About</a>
+                    <a href="#education"
+                        class="text-gray-400 hover:text-primary transition-colors duration-300 px-2">Education</a>
+                    <a href="#skills"
+                        class="text-gray-400 hover:text-primary transition-colors duration-300 px-2">Skills</a>
+                    <a href="#projects"
+                        class="text-gray-400 hover:text-primary transition-colors duration-300 px-2">Projects</a>
+                    <a href="#contact"
+                        class="text-gray-400 hover:text-primary transition-colors duration-300 px-2">Contact</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:+923043964853"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all duration-300 shadow-md"
+                        aria-label="Call">
+                        <i class="bi bi-telephone-fill"></i>
+                    </a>
+                    <a href="https://wa.me/923043964853" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-green-500 hover:text-white transition-all duration-300 shadow-md"
+                        aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:anassoomro9890@gmail.com"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all duration-300 shadow-md"
+                        aria-label="Email">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-600 hover:text-white transition-all duration-300 shadow-md"
+                        aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
+                        aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-800 my-8"></div>
+
+            <!-- Bottom Section - COMPLETELY DYNAMIC -->
+            <div class="text-center space-y-3">
+                <!-- Copyright with dynamic year -->
+                <p class="text-gray-500 text-sm">
+                    &copy; <span id="footerYear">2026</span>
+                    <span class="text-primary font-semibold">Muhammad Anas</span>.
+                    All Rights Reserved.
+                </p>
+
+                <!-- Tech stack + Dynamic info -->
+                <p class="text-gray-600 text-xs flex flex-wrap items-center justify-center gap-2">
+                    <span>Built with <i class="bi bi-heart-fill text-red-500"></i> using HTML, Tailwind CSS &amp;
+                        GSAP</span>
+                    <span class="hidden sm:inline text-gray-700">|</span>
+                    <span>Version <span id="footerVersion">2.1</span></span>
+                    <span class="hidden sm:inline text-gray-700">|</span>
+                    <span>Last updated: <span id="footerLastUpdated">January 2026</span></span>
+                </p>
+
+                <!-- Portfolio Status Badge -->
+                <div class="flex items-center justify-center gap-2 mt-2">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-xs font-medium border border-green-500/20">
+                        <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                        Portfolio Live
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">
+                        <i class="bi bi-clock-history"></i>
+                        <span id="uptimeDays">0</span> days old
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTop"
+        class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all duration-400"
+        aria-label="Scroll to top">
+        <i class="bi bi-arrow-up-short text-2xl">
+        </i>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ============================================
+            // 1. GSAP PLUGINS REGISTER
+            // ============================================
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+            // ============================================
+            // 2. TYPING EFFECT
+            // ============================================
+            const typingText = document.getElementById('typing-text');
+            const words = ['Full Stack Developer', 'Web Developer', 'PHP Developer'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const current = words[wordIndex];
+                typingText.textContent = current.substring(0, charIndex);
+                if (!isDeleting && charIndex < current.length) {
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else if (isDeleting && charIndex > 0) {
+                    charIndex--;
+                    setTimeout(type, 50);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, isDeleting ? 800 : 200);
+                }
+            }
+
+            // ============================================
+            // 3. HERO ANIMATIONS
+            // ============================================
+            const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            heroTl
+                .fromTo('.hero-avatar', { opacity: 0, scale: 0.7, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.8 })
+                .fromTo('.hero-name', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
+                .fromTo('.hero-title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.3')
+                .add(() => { type(); })
+                .fromTo('.hero-intro', { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.2')
+                .fromTo('.hero-buttons', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.3')
+                .fromTo('.hero-stats', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.3')
+                .fromTo('.scroll-indicator', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.2');
+
+            // ============================================
+            // 4. PARALLAX EFFECT ON BLOBS
+            // ============================================
+            const blobs = document.querySelectorAll('.blob-shape');
+            if (window.innerWidth > 768) {
+                window.addEventListener('mousemove', (e) => {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                    gsap.to(blobs[0], { x: x * 0.6, y: y * 0.6, duration: 1.2, ease: 'power2.out' });
+                    gsap.to(blobs[1], { x: -x * 0.5, y: -y * 0.5, duration: 1.4, ease: 'power2.out' });
+                });
+            }
+
+            // ============================================
+            // 5. SECTION HEADINGS ANIMATION
+            // ============================================
+            document.querySelectorAll('.section-heading').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 40 }, {
+                    opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+                    scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+                });
+            });
+
+            // ============================================
+            // 6. ABOUT CARD ANIMATION
+            // ============================================
+            gsap.fromTo('.about-card', { opacity: 0, y: 40 }, {
+                opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+                scrollTrigger: { trigger: '.about-card', start: 'top 80%' }
+            });
+
+            // ============================================
+            // 7. TIMELINE ANIMATION
+            // ============================================
+            document.querySelectorAll('.timeline-item').forEach((item, i) => {
+                const xStart = i % 2 === 0 ? -60 : 60;
+                gsap.fromTo(item, { opacity: 0, x: xStart }, {
+                    opacity: 1, x: 0, duration: 0.7, ease: 'power2.out',
+                    scrollTrigger: { trigger: item, start: 'top 80%' }
+                });
+            });
+
+            // ============================================
+            // 8. SKILLS ANIMATION
+            // ============================================
+            gsap.fromTo('.skill-card', { opacity: 0, scale: 0.8, y: 30 }, {
+                opacity: 1, scale: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'back.out(1.4)',
+                scrollTrigger: { trigger: '#skills', start: 'top 75%' }
+            });
+
+            // ============================================
+            // 9. PROJECTS ANIMATION
+            // ============================================
+            gsap.fromTo('.project-card', { opacity: 0, y: 40 }, {
+                opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+                scrollTrigger: { trigger: '#projects', start: 'top 80%' }
+            });
+
+            // ============================================
+            // 10. LANGUAGES ANIMATION
+            // ============================================
+            gsap.fromTo('.lang-card', { opacity: 0, y: 40 }, {
+                opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out',
+                scrollTrigger: { trigger: '#languages', start: 'top 80%' }
+            });
+
+            // ============================================
+            // 11. CONTACT ANIMATION
+            // ============================================
+            gsap.fromTo('.contact-card', { opacity: 0, x: -40 }, {
+                opacity: 1, x: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out',
+                scrollTrigger: { trigger: '#contact', start: 'top 80%' }
+            });
+
+            // ============================================
+            // 12. REFERENCE ANIMATION
+            // ============================================
+            gsap.fromTo('.ref-card', { opacity: 0, y: 40 }, {
+                opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+                scrollTrigger: { trigger: '#reference', start: 'top 85%' }
+            });
+
+            // ============================================
+            // 13. NAVBAR SCROLL EFFECT
+            // ============================================
+            ScrollTrigger.create({
+                start: 'top -80',
+                end: 99999,
+                onUpdate: self => {
+                    const opacity = self.progress < 0.2 ? 0.85 : 0.95;
+                    gsap.to('#navbar', { backgroundColor: `rgba(255,255,255,${opacity})`, duration: 0.3 });
+                }
+            });
+
+            // ============================================
+            // 14. ACTIVE NAV LINK
+            // ============================================
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveLink() {
+                let current = '';
+                sections.forEach(s => {
+                    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+                });
+            }
+            window.addEventListener('scroll', updateActiveLink);
+
+            // ============================================
+            // 15. SCROLL TO TOP BUTTON
+            // ============================================
+            const scrollBtn = document.getElementById('scrollToTop');
+            window.addEventListener('scroll', () => {
+                scrollBtn.classList.toggle('show', window.scrollY > 500);
+            });
+            scrollBtn.addEventListener('click', () => {
+                gsap.to(window, { scrollTo: { y: 0, autoKill: true }, duration: 1, ease: 'power2.inOut' });
+            });
+
+            // ============================================
+            // 16. MOBILE MENU
+            // ============================================
+            const hamburger = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const bar1 = document.getElementById('bar1');
+            const bar2 = document.getElementById('bar2');
+            const bar3 = document.getElementById('bar3');
+            let menuOpen = false;
+
+            function openMobileMenu() {
+                menuOpen = true;
+                mobileMenu.classList.remove('hidden');
+                gsap.fromTo(mobileMenu, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+                gsap.to(bar1, { rotation: 45, y: 6, duration: 0.3 });
+                gsap.to(bar2, { opacity: 0, scaleX: 0, duration: 0.2 });
+                gsap.to(bar3, { rotation: -45, y: -6, width: 24, duration: 0.3 });
+                hamburger.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                menuOpen = false;
+                gsap.to(mobileMenu, { opacity: 0, y: -20, duration: 0.25, ease: 'power2.in', onComplete: () => mobileMenu.classList.add('hidden') });
+                gsap.to(bar1, { rotation: 0, y: 0, duration: 0.3 });
+                gsap.to(bar2, { opacity: 1, scaleX: 1, duration: 0.3 });
+                gsap.to(bar3, { rotation: 0, y: 0, width: 20, duration: 0.3 });
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            hamburger.addEventListener('click', () => menuOpen ? closeMobileMenu() : openMobileMenu());
+            document.querySelectorAll('.mobile-nav-link').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+            // ============================================
+            // 17. RIPPLE EFFECT
+            // ============================================
+            document.querySelectorAll('.ripple-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple-span');
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+                    ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+                    btn.appendChild(ripple);
+                    ripple.addEventListener('animationend', () => ripple.remove());
+                });
+            });
+
+            // ============================================
+            // 18. SMOOTH SCROLL FOR ANCHOR LINKS
+            // ============================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const navHeight = document.getElementById('navbar').offsetHeight;
+                        gsap.to(window, {
+                            duration: 1,
+                            scrollTo: { y: target, offsetY: navHeight + 10 },
+                            ease: 'power2.inOut'
+                        });
+                    }
+                });
+            });
+
+            // ============================================
+            // 19. FOOTER - DYNAMIC CONTENT (NEW!)
+            // ============================================
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
+            // Update copyright year
+            const yearSpan = document.getElementById('footerYear');
+            if (yearSpan) {
+                yearSpan.textContent = currentYear;
+            }
+
+            // Update last updated
+            const lastUpdatedSpan = document.getElementById('footerLastUpdated');
+            if (lastUpdatedSpan) {
+                lastUpdatedSpan.textContent = `${months[now.getMonth()]} ${currentYear}`;
+            }
+
+            // Update uptime days (since launch)
+            const launchDate = new Date(2025, 0, 1); // January 1, 2025
+            const daysOld = Math.floor((Date.now() - launchDate) / (1000 * 60 * 60 * 24));
+            const uptimeSpan = document.getElementById('uptimeDays');
+            if (uptimeSpan) {
+                uptimeSpan.textContent = daysOld;
+            }
+
+            // Version number (auto-increment concept)
+            const versionSpan = document.getElementById('footerVersion');
+            if (versionSpan) {
+                const currentVersion = parseFloat(versionSpan.textContent) || 2.1;
+                versionSpan.textContent = currentVersion.toFixed(1);
+            }
+
+            // ============================================
+            // 20. CONSOLE EASTER EGG
+            // ============================================
+            console.log('%c🚀 Muhammad Anas Portfolio', 'color:#f97316;font-size:24px;font-weight:bold;');
+            console.log('%c👨‍💻 Full Stack Developer | Karachi, Pakistan', 'color:#888;font-size:14px;');
+            console.log(`%c📅 Last Updated: ${months[now.getMonth()]} ${currentYear}`, 'color:#666;');
+            console.log(`%c⏳ Portfolio Age: ${daysOld} days`, 'color:#666;');
+            console.log('%c❤️ Built with passion and clean code', 'color:#f97316;font-style:italic;');
+            console.log('%c🔗 https://m-anas-dev.netlify.app', 'color:#3b82f6;text-decoration:underline;');
+
+            console.log('%c✅ Portfolio fully loaded with dynamic footer!', 'color:#22c55e;font-weight:bold;');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js">
+    </script>
+</body>
+
+</html>
